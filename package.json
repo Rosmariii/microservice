@@ -9,13 +9,17 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^3.0.7",
     "body-parse": "^0.1.0",
     "body-parser": "^1.20.1",
     "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.0",
     "nanoid": "^3.3.4",
-    "nodemon": "^2.0.20"
+    "nodemon": "^2.0.20",
+    "swagger-ui-express": "^4.6.0"
   },
   "devDependencies": {
+    "@types/bcrypt": "^5.0.0",
     "@types/body-parser": "^1.19.2"
   }
 }
