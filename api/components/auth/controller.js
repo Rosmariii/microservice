@@ -1,6 +1,8 @@
 
 const bcrypt = require('bcrypt');
 const auth = require('../../../auth');
+const error = require('../../../utils/errors')
+
 const TABLA = 'auth';
 
 module.exports = function(injectedStore){
@@ -15,9 +17,9 @@ module.exports = function(injectedStore){
         return bcrypt.compare(password, data.password) 
             .then( sonIguales => {
                     if (sonIguales === true) {
-                    return auth.sign(data)
+                    return auth.sign(JSON.parse(JSON.stringify(data)));
                 } else {
-                    throw new Error('Información invalida')
+                    throw error('Información invalida', 403)
                 }
             })
         

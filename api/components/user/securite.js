@@ -6,7 +6,13 @@ module.exports = function CheckAuth(action) {
         switch(action) {
             case 'update':
                 let owner = req.body.id
-                auth.check.own(req, owner)
+                auth.check.own(req, owner);
+                next();
+                break;
+            
+            case 'follow':
+                auth.check.logged(req);
+                next();
                 break;
             default:
                 next()

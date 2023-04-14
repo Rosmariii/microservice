@@ -1,5 +1,7 @@
 const jwt = require('jsonwebtoken');
-const config = require('../config')
+const config = require('../config');
+const error = require('../utils/errors')
+
 const secret = config.jwt.secret;
 
 function sign(data) {
@@ -13,16 +15,24 @@ const check = {
     own: function (req, owner){
         const decode = decodeHeader(req)
         console.log(decode)
-    }
+
+        if (decode.id !== owner) {
+            throw error('No puedes hacer esto', 401)
+        }
+    },
+
+    logged: function(req, owner) {
+        const decoded = decodeHeader(req);
+    },
 }
 
 function getToken(auth){
     if (!auth) {
-        throw new Error('No viene token')
+        throw error('No viene token', 403)
     }
 
     if (auth.indexOf('Bearer ') === -1 ) {
-        throw new Error('Formato invalido')
+        throw error('Formato invalido', 403)
     }
 
     let token = auth.replace('Bearer ', '');
@@ -40,5 +50,5 @@ function decodeHeader(req){
 }
 
 module.exports = {
-    sign,
+    sign, check,
 }
