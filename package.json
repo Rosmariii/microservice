@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "concurrently \" nodemon api/index.js\" \"nodemon post/index-post.js\" \"nodemon mysql/index-mysql.js\"",
+    "start": "nodemon api/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
