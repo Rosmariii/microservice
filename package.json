@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "concurrently \" nodemon api/index.js\" \"nodemon post/index-post.js\" \"nodemon mysql/index-mysql.js\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -25,6 +26,7 @@
   "devDependencies": {
     "@types/bcryptjs": "^2.4.2",
     "@types/body-parser": "^1.19.2",
-    "@types/mysql": "^2.15.21"
+    "@types/mysql": "^2.15.21",
+    "concurrently": "^8.0.1"
   }
 }
