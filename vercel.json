@@ -25,8 +25,5 @@
             "src": "user/index.js",
             "use": "@vercel/node"
         }
-    ],
-    "includeFiles": [
-        "package.json"
     ]
 }
