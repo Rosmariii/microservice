@@ -4,7 +4,6 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "concurrently \"node post/index-post.js\" \"node api/index.js \" \"node mysql/index-mysql.js\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
