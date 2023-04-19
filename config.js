@@ -16,10 +16,15 @@ module.exports = {
         database: process.env.MYSQL_DB || 'new_schema',
     },
     mysqlService: {
-        port: process.env.MYSQL_SEV_PORT || 3001,
-    },
-    mysqlService: {
         host: process.env.MYSQL_SRV_HOST || 'localhost',
         port: process.env.MYSQL_SRV_PORT || 3001,
+    },
+    cacheService: {
+        host: process.env.MYSQL_SRV_HOST || 'localhost',
+        port: process.env.MYSQL_SRV_PORT || 3003,
+        dbUser: process.env.REDIS_USER || 'default',
+        dbHost: process.env.REDIS_HOST || 'redis-11876.c8.us-east-1-3.ec2.cloud.redislabs.com',
+        dbPort: process.env.REDIS_PORT || 11876,
+        dbPass: process.env.REDIS_PASS || 'pyDlQbbzXGaezxJAAcDVIwBXhiixgRYV',
     }
 }
